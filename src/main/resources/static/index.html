@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StrangerCam</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <section id="join-screen" class="screen">
+    <div class="join-card">
+      <h1>StrangerCam</h1>
+      <p class="subtitle">Talk to a random stranger by video</p>
+
+      <label for="name-input">Your name</label>
+      <input id="name-input" type="text" autocomplete="off" />
+
+      <button id="start-btn">Start</button>
+      <p id="join-error" class="error"></p>
+    </div>
+  </section>
+
+  <section id="waiting-screen" class="screen hidden">
+    <div class="join-card center-text">
+      <div class="spinner"></div>
+      <h2>Looking for a stranger...</h2>
+      <button id="cancel-btn" class="secondary-btn">Cancel</button>
+    </div>
+  </section>
+
+  <section id="call-screen" class="screen hidden">
+    <header class="call-header">
+      <span id="partner-label">Connected with: —</span>
+      <button id="next-btn">Next stranger ▶</button>
+    </header>
+
+    <div id="video-grid" class="video-grid"></div>
+    <div id="chat-box"></div>
+      <form id="chat-form">
+        <input id="chat-input" type="text" placeholder="Say something..." autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+    <p id="call-status" class="status-banner hidden"></p>
+
+    <footer class="call-controls">
+      <button id="mic-btn" class="control-btn" title="Toggle microphone">🎤</button>
+      <button id="cam-btn" class="control-btn" title="Toggle camera">📷</button>
+      <button id="leave-btn" class="control-btn leave" title="Leave">⏹</button>
+    </footer>
+  </section>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background: #0f1115;
+  color: #f1f1f4;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.screen {
+  height: 100vh;
+  width: 100vw;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#join-screen,
+#waiting-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #1c2030 0%, #0f1115 70%);
+}
+
+.join-card {
+  width: 340px;
+  background: #171a23;
+  border: 1px solid #262b3a;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.join-card.center-text {
+  text-align: center;
+}
+
+.join-card h1 {
+  font-size: 28px;
+  margin-bottom: 4px;
+  background: linear-gradient(90deg, #7c9dff, #b47cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.join-card h2 {
+  font-size: 18px;
+  margin: 16px 0;
+  color: #cdd2e6;
+}
+
+.subtitle {
+  color: #8b8fa3;
+  font-size: 13px;
+  margin-bottom: 24px;
+}
+
+.join-card label {
+  display: block;
+  font-size: 12px;
+  color: #8b8fa3;
+  margin-bottom: 6px;
+  margin-top: 14px;
+}
+
+.join-card input {
+  width: 100%;
+  padding: 12px 14px;
+  background: #0f1115;
+  border: 1px solid #2a2f3f;
+  border-radius: 10px;
+  color: #f1f1f4;
+  font-size: 14px;
+  outline: none;
+}
+
+.join-card input:focus {
+  border-color: #7c9dff;
+}
+
+#start-btn, #next-btn {
+  width: 100%;
+  margin-top: 24px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #6c8cff, #a86cff);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+#start-btn:hover, #next-btn:hover {
+  opacity: 0.9;
+}
+
+.secondary-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border: 1px solid #2f3548;
+  border-radius: 10px;
+  background: transparent;
+  color: #cdd2e6;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background: #1d2230;
+}
+
+.error {
+  color: #ff6b6b;
+  font-size: 12px;
+  margin-top: 10px;
+  min-height: 14px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 16px;
+  border: 3px solid #2a2f3f;
+  border-top-color: #7c9dff;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+#call-screen {
+  display: flex;
+  flex-direction: column;
+}
+
+.call-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: #171a23;
+  border-bottom: 1px solid #262b3a;
+  font-size: 14px;
+}
+
+#next-btn {
+  width: auto;
+  margin-top: 0;
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+.status-banner {
+  text-align: center;
+  padding: 10px;
+  background: #2a2038;
+  color: #d9b8ff;
+  font-size: 13px;
+}
+
+.video-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  padding: 16px;
+  overflow-y: auto;
+  align-content: start;
+}
+
+.video-tile {
+  position: relative;
+  background: #171a23;
+  border: 1px solid #262b3a;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.video-tile video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #000;
+}
+
+.video-tile .label {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.call-controls {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 18px;
+  background: #171a23;
+  border-top: 1px solid #262b3a;
+}
+
+.control-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid #2f3548;
+  background: #232838;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.control-btn:hover {
+  background: #2a3049;
+}
+
+.control-btn.off {
+  background: #ff6b6b33;
+  border-color: #ff6b6b;
+}
+
+.control-btn.leave {
+  background: #ff4757;
+  border-color: #ff4757;
+}
+
+.control-btn.leave:hover {
+  background: #e63c4c;
+}
